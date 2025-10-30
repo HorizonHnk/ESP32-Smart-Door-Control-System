@@ -901,7 +901,7 @@ Contributions are welcome! Here's how you can help:
 
 ```bash
 # Fork and clone
-git clone https://github.com/YOUR_USERNAME/ESP32-Smart-Door-Control-System.git
+git clone https://github.com/HorizonHnk/ESP32-Smart-Door-Control-System.git
 cd ESP32-Smart-Door-Control-System
 
 # Create branch
