@@ -1,0 +1,99 @@
+📋 COMPLETE CHATBOT COMMAND LIST
+
+Command Format:
+- Commands can start with either / or \
+- Commands are case-insensitive (works with CAPS or lowercase)
+
+================================================================================
+🚪 DOOR COMMANDS
+
+To Open the Door:
+- /open
+- /open door
+- /open the door
+
+To Close the Door:
+- /close
+- /close door
+- /close the door
+
+================================================================================
+💡 LED COMMANDS ✨ NEW!
+
+To Turn LED ON:
+- /led
+- /led on
+- /led active
+- /led activate
+- /led activation
+
+To Turn LED OFF:
+- /led off
+- /led disactive
+- /led disactivate
+- /led disactivation
+
+================================================================================
+🌀 FAN COMMANDS
+
+To Turn Fan ON:
+- /fan
+- /activate fan
+- /fan active
+- /fan on
+
+To Turn Fan OFF:
+- /fan off
+- /disactive fan
+- /fan disactivate
+
+================================================================================
+🔔 BUZZER COMMANDS
+
+To Turn Buzzer ON:
+- /buzzer
+- /buzzer on
+- /buzzer active
+- /buzzer activate
+- /buzzer activation
+
+To Turn Buzzer OFF:
+- /buzzer off
+- /buzzer disactive
+- /buzzer disactivate
+- /buzzer disactivation
+
+================================================================================
+💡 Usage Examples:
+
+/open               → Opens the door
+\CLOSE              → Closes the door
+/LED ON             → Turns LED on
+\led off            → Turns LED off
+/Fan On             → Turns fan on
+\BUZZER OFF         → Turns buzzer off
+/open the door      → Opens the door
+\led activation     → Turns LED on
+
+================================================================================
+✅ Quick Reference Card:
+
+| Action     | Simple Command |
+|------------|----------------|
+| Open Door  | /open          |
+| Close Door | /close         |
+| LED On     | /led on        |
+| LED Off    | /led off       |
+| Fan On     | /fan on        |
+| Fan Off    | /fan off       |
+| Buzzer On  | /buzzer on     |
+| Buzzer Off | /buzzer off    |
+
+================================================================================
+📍 Where to Use Commands:
+
+All these commands work in both:
+- 🎯 Main Dashboard → AI Chat Tab
+- 🎯 Dedicated Chat Page → /chat
+
+The LED commands have been successfully integrated into your system! 🎉

@@ -1,0 +1,25 @@
+# Sensitive Configuration Files
+secrets.h
+
+# Arduino/ESP32 Build Files
+*.hex
+*.bin
+*.elf
+*.map
+*.sym
+*.lst
+build/
+
+# IDE Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary Files
+*.tmp
+*.bak
+*.log

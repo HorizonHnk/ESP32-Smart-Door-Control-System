@@ -1,0 +1,314 @@
+🎤 VOICE CONTROL USER GUIDE
+================================================================================
+
+✅ WHAT'S BEEN ADDED:
+---------------------
+1. Voice recognition button (🎤) in the AI Chat interface
+2. Web Speech API integration for hands-free control
+3. Automatic command detection and execution
+4. Visual feedback when listening (button turns red 🔴)
+5. Toast notifications for status updates
+
+================================================================================
+
+🚀 HOW TO USE VOICE CONTROL:
+----------------------------
+
+STEP 1: Set up ngrok (REQUIRED for HTTPS)
+------------------------------------------
+Follow the NGROK_SETUP_GUIDE.txt to get your HTTPS URL
+
+STEP 2: Access Your Dashboard via HTTPS
+----------------------------------------
+1. Open Chrome or Edge browser (best support for voice)
+2. Navigate to your ngrok HTTPS URL (e.g., https://abc123.ngrok.io)
+3. The dashboard should load normally
+
+STEP 3: Go to AI Chat Tab
+--------------------------
+1. Click on the "🤖 AI Chat" tab in the dashboard
+   OR
+2. Access the dedicated chat page at: https://abc123.ngrok.io/chat
+
+STEP 4: Enable Microphone
+--------------------------
+1. Look for the yellow 🎤 button in the chat input area
+2. Click the 🎤 button
+3. Browser will ask: "Allow microphone access?"
+4. Click "Allow" or "Yes"
+
+   NOTE: This permission is required only once per session
+
+STEP 5: Start Talking!
+-----------------------
+1. Click the 🎤 button to start listening
+2. Button turns RED 🔴 and shows "Listening..." notification
+3. Speak your command clearly (see commands below)
+4. The system automatically processes your voice
+5. Your spoken text appears in the chat input
+6. Command executes automatically!
+
+================================================================================
+
+🎯 VOICE COMMANDS YOU CAN SAY:
+------------------------------
+
+Door Control:
+-------------
+- "Open the door"
+- "Open door"
+- "Close the door"
+- "Close door"
+
+LED Control:
+------------
+- "LED on"
+- "LED off"
+- "Turn on LED"
+- "Turn off LED"
+- "LED activation"
+
+Fan Control:
+------------
+- "Fan on"
+- "Fan off"
+- "Turn on fan"
+- "Turn off fan"
+- "Activate fan"
+
+Buzzer Control:
+---------------
+- "Buzzer on"
+- "Buzzer off"
+- "Activate buzzer"
+- "Deactivate buzzer"
+
+Information Queries:
+--------------------
+- "What's the temperature?"
+- "What's the humidity?"
+- "Is the door open?"
+- "What's the current status?"
+- "Tell me about the system"
+
+================================================================================
+
+🎨 VISUAL INDICATORS:
+---------------------
+
+🎤 Yellow Button = Ready to listen (click to start)
+🔴 Red Button = Currently listening (speak now!)
+💬 Blue Toast = "Listening..." notification
+✅ Green Toast = Command executed successfully
+❌ Red Toast = Error occurred
+
+================================================================================
+
+💡 TIPS FOR BEST RESULTS:
+-------------------------
+
+1. SPEAK CLEARLY:
+   - Use normal speaking volume
+   - Don't shout or whisper
+   - Speak at a normal pace (not too fast/slow)
+
+2. USE SIMPLE COMMANDS:
+   - Stick to the command list above
+   - Shorter commands work better
+   - Examples: "Open door" works better than "Please open the door for me"
+
+3. QUIET ENVIRONMENT:
+   - Minimize background noise
+   - Avoid using near loud fans or music
+   - Close windows if traffic noise is present
+
+4. MICROPHONE POSITION:
+   - Use device's built-in microphone
+   - Or use external mic 6-12 inches from mouth
+   - Don't cover or obstruct microphone
+
+5. ONE COMMAND AT A TIME:
+   - Wait for previous command to complete
+   - Button returns to yellow 🎤 before next command
+   - Each button press = one voice capture
+
+================================================================================
+
+🔧 TROUBLESHOOTING:
+-------------------
+
+Problem: Microphone button doesn't work
+Solutions:
+  ✓ Make sure you're using HTTPS (ngrok URL)
+  ✓ Check browser is Chrome or Edge
+  ✓ Allow microphone permission when prompted
+  ✓ Check System Settings > Privacy > Microphone
+
+Problem: "Voice not supported in this browser"
+Solutions:
+  ✓ Switch to Chrome or Microsoft Edge
+  ✓ Update browser to latest version
+  ✓ Try different browser
+
+Problem: Voice recognized but command doesn't work
+Solutions:
+  ✓ Check the text that appeared in chat input
+  ✓ Make sure command matches the list exactly
+  ✓ Speak more clearly
+  ✓ Try typing the command to verify it works
+
+Problem: Button stays red and won't stop
+Solutions:
+  ✓ Click the button again to stop listening
+  ✓ Refresh the page if button is stuck
+  ✓ Check browser console (F12) for errors
+
+Problem: No response after speaking
+Solutions:
+  ✓ Check your internet connection
+  ✓ Verify ESP32 is still connected
+  ✓ Try refreshing the page
+  ✓ Check Serial Monitor for ESP32 errors
+
+Problem: "not-allowed" error
+Solutions:
+  ✓ Microphone permission was denied
+  ✓ Click the 🔒 lock icon in browser address bar
+  ✓ Find "Microphone" and change to "Allow"
+  ✓ Refresh the page
+
+================================================================================
+
+📱 SUPPORTED BROWSERS:
+----------------------
+
+✅ Fully Supported:
+  - Google Chrome (Desktop & Android)
+  - Microsoft Edge (Desktop)
+  - Samsung Internet (Android)
+  - Opera (Desktop)
+
+⚠️ Limited Support:
+  - Safari (iOS/Mac) - may have restrictions
+  - Firefox - limited voice API support
+
+❌ Not Supported:
+  - Internet Explorer
+  - Very old browser versions
+
+================================================================================
+
+🌐 BOTH INTERFACES SUPPORT VOICE:
+----------------------------------
+
+Main Dashboard Chat:
+  URL: https://your-ngrok-url.ngrok.io
+  Tab: 🤖 AI Chat
+
+Dedicated Chat Page:
+  URL: https://your-ngrok-url.ngrok.io/chat
+  Full-screen chat experience
+
+Both have the same voice control capabilities!
+
+================================================================================
+
+🎭 HOW IT WORKS (Technical):
+-----------------------------
+
+1. User clicks 🎤 button
+2. Browser's Web Speech API activates microphone
+3. Voice audio captured and sent to Google's servers
+4. Speech-to-text conversion happens in real-time
+5. Text transcript returned to browser
+6. Your ESP32 processes the text as a command
+7. System executes the command (open door, turn on LED, etc.)
+8. Response displayed in chat
+
+All processing happens in real-time (usually < 2 seconds)!
+
+================================================================================
+
+⚠️ IMPORTANT SECURITY NOTES:
+-----------------------------
+
+1. HTTPS REQUIREMENT:
+   - Voice only works on HTTPS connections
+   - Never on HTTP (security restriction)
+   - This is why ngrok is needed
+
+2. MICROPHONE PERMISSION:
+   - Browser asks for permission first
+   - You control when mic is active
+   - Mic only active when red button is showing
+
+3. PRIVACY:
+   - Voice data processed by Google Speech API
+   - No voice recordings stored on ESP32
+   - Only text commands sent to ESP32
+
+4. NGROK URLS:
+   - Free tier URLs are public (anyone with URL can access)
+   - Consider ngrok paid plan for authentication
+   - Or use Tailscale for private access
+
+================================================================================
+
+🎉 QUICK TEST:
+--------------
+
+1. Upload your updated code to ESP32
+2. Start ngrok: ngrok http YOUR_ESP32_IP:80
+3. Copy the HTTPS URL
+4. Open in Chrome
+5. Go to AI Chat tab
+6. Click 🎤 button
+7. Allow microphone
+8. Say "Open the door"
+9. Watch it work! 🚀
+
+================================================================================
+
+📞 COMMAND EXAMPLES IN CONVERSATION:
+-------------------------------------
+
+You: "What's the temperature?"
+Bot: "The current temperature is 24.5°C..."
+
+You: "Open the door"
+Bot: "✅ Opening door..."
+
+You: "LED on"
+Bot: "✅ Turning LED on..."
+
+You: "Is the door open?"
+Bot: "Yes, the door is currently OPEN..."
+
+================================================================================
+
+🔮 FUTURE ENHANCEMENTS (Ideas):
+--------------------------------
+
+- Continuous listening mode
+- Custom wake word (e.g., "Hey ESP32")
+- Voice feedback (text-to-speech responses)
+- Multiple language support
+- Voice authentication
+- Scheduled voice commands
+
+================================================================================
+
+✅ CHECKLIST:
+-------------
+
+Before using voice control, make sure:
+☐ ESP32 code uploaded
+☐ ESP32 connected to WiFi
+☐ ngrok installed
+☐ ngrok running with HTTPS URL
+☐ Chrome or Edge browser
+☐ Microphone permission granted
+☐ Quiet environment
+☐ Good internet connection
+
+Ready to go? Click that 🎤 button and start talking! 🎉

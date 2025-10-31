@@ -1,0 +1,184 @@
+🚀 NGROK SETUP GUIDE FOR ESP32 VOICE CONTROL
+================================================================================
+
+📋 PREREQUISITES:
+- ESP32 is connected to WiFi (ESP32SEG)
+- ESP32 code is uploaded and running
+- ngrok is installed on your PC
+
+================================================================================
+
+STEP 1: Find Your ESP32 IP Address
+-----------------------------------
+1. Open Arduino Serial Monitor (115200 baud)
+2. Reset your ESP32
+3. Look for the line: "IP Address: 192.168.x.x"
+4. Write down this IP address
+   Example: 192.168.1.100
+
+================================================================================
+
+STEP 2: Test ESP32 Connection (Optional but Recommended)
+---------------------------------------------------------
+1. Open a web browser
+2. Type: http://192.168.x.x (your ESP32 IP)
+3. You should see the ESP32 dashboard
+4. If it works, proceed to Step 3
+
+================================================================================
+
+STEP 3: Start ngrok Tunnel
+---------------------------
+1. Open Command Prompt or PowerShell
+2. Navigate to where ngrok is installed, or if it's in PATH, just run:
+
+   ngrok http YOUR_ESP32_IP:80
+
+   Example:
+   ngrok http 192.168.1.100:80
+
+3. Press ENTER
+
+================================================================================
+
+STEP 4: Get Your HTTPS URL
+---------------------------
+After running ngrok, you'll see output like:
+
+   Session Status                online
+   Account                       your-email@example.com (Plan: Free)
+   Version                       3.x.x
+   Region                        United States (us)
+   Forwarding                    https://abc123.ngrok.io -> http://192.168.1.100:80
+
+COPY THE HTTPS URL: https://abc123.ngrok.io
+(This URL changes every time you restart ngrok on free plan)
+
+================================================================================
+
+STEP 5: Access Your Dashboard via HTTPS
+----------------------------------------
+1. Open a web browser (Chrome/Edge recommended for voice)
+2. Paste your ngrok HTTPS URL
+3. You should see your ESP32 dashboard
+4. The URL bar should show a 🔒 lock icon (secure)
+
+================================================================================
+
+STEP 6: Enable Voice Control 🎤
+--------------------------------
+1. Go to the AI Chat tab on your dashboard
+2. You'll see a new 🎤 Voice Control button
+3. Click it - browser will ask for microphone permission
+4. Click "Allow"
+5. Speak your command clearly (e.g., "open the door")
+6. The system will recognize and execute the command!
+
+================================================================================
+
+📝 VOICE COMMANDS YOU CAN USE:
+------------------------------
+Door Control:
+- "Open the door"
+- "Close the door"
+- "Open door"
+- "Close door"
+
+LED Control:
+- "LED on"
+- "LED off"
+- "Turn on LED"
+- "Turn off LED"
+
+Fan Control:
+- "Fan on"
+- "Fan off"
+- "Turn on fan"
+- "Turn off fan"
+
+Buzzer Control:
+- "Buzzer on"
+- "Buzzer off"
+- "Activate buzzer"
+- "Deactivate buzzer"
+
+Status Queries:
+- "What's the temperature?"
+- "What's the humidity?"
+- "Is the door open?"
+- "What's the current status?"
+
+================================================================================
+
+⚠️ IMPORTANT NOTES:
+-------------------
+1. FREE PLAN LIMITATIONS:
+   - URL changes every time ngrok restarts
+   - 40 connections/minute limit
+   - Session expires after 8 hours
+
+2. KEEPING NGROK RUNNING:
+   - Don't close the Command Prompt window
+   - If you close it, you need to restart ngrok
+   - The URL will change when you restart
+
+3. UPGRADE OPTIONS ($8/month):
+   - Static domain (same URL every time)
+   - No connection limits
+   - No session timeouts
+
+================================================================================
+
+🔧 TROUBLESHOOTING:
+-------------------
+Problem: "ngrok not found"
+Solution: Make sure ngrok.exe is in your PATH or navigate to its folder
+
+Problem: "Failed to connect to localhost:80"
+Solution: Check your ESP32 IP is correct and ESP32 is running
+
+Problem: Microphone not working
+Solution:
+  - Make sure you're using HTTPS URL (not HTTP)
+  - Check browser permissions (Settings > Privacy > Microphone)
+  - Try Chrome or Edge browser
+
+Problem: Voice commands not recognized
+Solution:
+  - Speak clearly and at normal pace
+  - Use simple commands from the list
+  - Check if text appears in chat (recognition working but command not matching)
+
+Problem: ngrok session expired
+Solution: Just restart ngrok command, get new URL
+
+================================================================================
+
+💡 QUICK START COMMAND:
+-----------------------
+1. Find ESP32 IP from Serial Monitor
+2. Run: ngrok http 192.168.1.100:80
+3. Copy HTTPS URL from ngrok output
+4. Open URL in Chrome/Edge
+5. Enable microphone and start talking!
+
+================================================================================
+
+🎯 NEXT STEPS:
+--------------
+Once working, you can:
+1. Create ngrok account (free) at: https://ngrok.com
+2. Get auth token for longer sessions
+3. Consider paid plan ($8/mo) for static domain
+4. Set up automatic ngrok startup script
+
+================================================================================
+
+📞 NEED HELP?
+-------------
+Check these resources:
+- ngrok documentation: https://ngrok.com/docs
+- ESP32 Serial Monitor for debug messages
+- Browser Console (F12) for JavaScript errors
+
+Good luck! 🚀
